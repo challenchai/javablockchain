@@ -2,6 +2,8 @@ package me.greensoft.blockchain;
 
 import java.util.Date;
 
+import me.greensoft.util.StringUtil;
+
 public class Block {
 
 	public String hash;
@@ -14,5 +16,10 @@ public class Block {
 		this.data = data;
 		this.previousHash = previousHash;
 		this.timeStamp = new Date().getTime();
+	}
+
+	public String calculateHash() {
+		String calculatedhash = StringUtil.applySha256(previousHash + Long.toString(timeStamp) + data);
+		return calculatedhash;
 	}
 }
