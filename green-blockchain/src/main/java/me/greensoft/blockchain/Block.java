@@ -1,4 +1,4 @@
-package me.greensoft;
+package me.greensoft.blockchain;
 
 import java.util.Date;
 
